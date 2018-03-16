@@ -1,8 +1,11 @@
 import React from 'react';
 
-class Circle extends React.Component {
+export default class Circle extends React.Component {
 
-  
+  shouldComponentUpdate(nextProps) {
+    return ( this.props.color === nextProps.color ? false : true )
+
+  }
 
   render() {
     const { color } = this.props;
@@ -12,5 +15,3 @@ class Circle extends React.Component {
     )
   }
 }
-
-export default Circle;
